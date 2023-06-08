@@ -25,19 +25,10 @@ public class ResponseServiceImpl implements ResponseService {
     private final ResponseRepository responseRepository;
 
 
-    @SneakyThrows
+
     @Override
-    public void handleResponse(HttpServletResponse httpServletResponse) {
-        System.out.println("testResp");
-        var wrappedResponse = new ContentCachingResponseWrapper(httpServletResponse);
-        byte[] responseBodyArr = wrappedResponse.getContentAsByteArray();
-        String responseBody;
-        if (responseBodyArr.length > 0){
-            System.out.println("testResp2");
-             responseBody = new String(responseBodyArr, StandardCharsets.UTF_8);
-        Response response = Response.builder().body(responseBody).build();
-        wrappedResponse.copyBodyToResponse();
+    public void handleResponse(Response response) {
         responseRepository.save(response);
         }
     }
-}
+

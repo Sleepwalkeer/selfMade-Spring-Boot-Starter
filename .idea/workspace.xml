@@ -5,16 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ed1d578f-5b23-491d-bf86-d95c92519201" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/eu/senla/entity/Response.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/eu/senla/interceptor/ResponseInterceptor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/eu/senla/interceptor/ResponseInterceptorImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/eu/senla/repository/ResponseRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/eu/senla/service/ResponseService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/eu/senla/service/ResponseServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/eu/senla/configuration/StarterSelfMadeConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eu/senla/configuration/StarterSelfMadeConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/eu/senla/entity/Request.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eu/senla/entity/Request.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/eu/senla/interceptor/ResponseInterceptorImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eu/senla/interceptor/ResponseInterceptorImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/eu/senla/service/RequestServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eu/senla/service/RequestServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/eu/senla/service/ResponseService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eu/senla/service/ResponseService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/eu/senla/service/ResponseServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eu/senla/service/ResponseServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

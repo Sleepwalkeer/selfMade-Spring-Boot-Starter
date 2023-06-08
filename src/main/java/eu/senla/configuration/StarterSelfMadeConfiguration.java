@@ -27,14 +27,14 @@ public class StarterSelfMadeConfiguration {
     private final ResponseService responseService;
 
 
-//    @Bean(name = "filterRegistrationBeanRequest")
-//    @ConditionalOnMissingBean(RequestInterceptor.class)
-//    public FilterRegistrationBean<Filter> filterFilterRegistrationBeanRequest(){
-//        var filterRegistrationBean = new FilterRegistrationBean<Filter>();
-//        filterRegistrationBean.setFilter(new RequestInterceptorImpl(requestService));
-//        filterRegistrationBean.setOrder(Integer.MIN_VALUE);
-//        return  filterRegistrationBean;
-//    }
+    @Bean(name = "filterRegistrationBeanRequest")
+    @ConditionalOnMissingBean(RequestInterceptor.class)
+    public FilterRegistrationBean<Filter> filterFilterRegistrationBeanRequest(){
+        var filterRegistrationBean = new FilterRegistrationBean<Filter>();
+        filterRegistrationBean.setFilter(new RequestInterceptorImpl(requestService));
+        filterRegistrationBean.setOrder(Integer.MIN_VALUE);
+        return  filterRegistrationBean;
+    }
     @Bean(name = "filterRegistrationBeanResponse")
     @ConditionalOnMissingBean(ResponseInterceptor.class)
     public FilterRegistrationBean<Filter> filterFilterRegistrationBeanResponse(){
