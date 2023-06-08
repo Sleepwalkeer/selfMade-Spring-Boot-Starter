@@ -2,7 +2,10 @@ package eu.senla.configuration;
 
 import eu.senla.interceptor.RequestInterceptor;
 import eu.senla.interceptor.RequestInterceptorImpl;
+import eu.senla.interceptor.ResponseInterceptor;
+import eu.senla.interceptor.ResponseInterceptorImpl;
 import eu.senla.service.RequestService;
+import eu.senla.service.ResponseService;
 import jakarta.servlet.Filter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
@@ -21,14 +24,22 @@ import org.springframework.data.mongodb.repository.config.EnableMongoRepositorie
 public class StarterSelfMadeConfiguration {
 
     private final RequestService requestService;
+    private final ResponseService responseService;
 
 
-    @Bean
-    @ConditionalOnMissingBean(RequestInterceptor.class)
-    public FilterRegistrationBean<Filter> filterFilterRegistrationBean(){
-        System.out.println("test");
+//    @Bean(name = "filterRegistrationBeanRequest")
+//    @ConditionalOnMissingBean(RequestInterceptor.class)
+//    public FilterRegistrationBean<Filter> filterFilterRegistrationBeanRequest(){
+//        var filterRegistrationBean = new FilterRegistrationBean<Filter>();
+//        filterRegistrationBean.setFilter(new RequestInterceptorImpl(requestService));
+//        filterRegistrationBean.setOrder(Integer.MIN_VALUE);
+//        return  filterRegistrationBean;
+//    }
+    @Bean(name = "filterRegistrationBeanResponse")
+    @ConditionalOnMissingBean(ResponseInterceptor.class)
+    public FilterRegistrationBean<Filter> filterFilterRegistrationBeanResponse(){
         var filterRegistrationBean = new FilterRegistrationBean<Filter>();
-        filterRegistrationBean.setFilter(new RequestInterceptorImpl(requestService));
+        filterRegistrationBean.setFilter(new ResponseInterceptorImpl(responseService));
         filterRegistrationBean.setOrder(Integer.MIN_VALUE);
         return  filterRegistrationBean;
     }

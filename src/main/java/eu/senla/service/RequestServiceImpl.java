@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.util.ContentCachingRequestWrapper;
 
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -20,10 +21,11 @@ import java.util.stream.Collectors;
 public class RequestServiceImpl implements RequestService{
 
     private final RequestRepository requestRepository;
+
     @Override
     @SneakyThrows
     public void handleRequest(HttpServletRequest httpRequest) {
-             Request request = Request.builder()
+        Request request = Request.builder()
                 .url(httpRequest.getRequestURL().toString())
                 .method(httpRequest.getMethod())
                 .headers(extractHeaders(httpRequest))
@@ -31,7 +33,7 @@ public class RequestServiceImpl implements RequestService{
         requestRepository.save(request);
     }
 
-    private Map<String, String> extractHeaders(HttpServletRequest httpRequest){
+    private Map<String, String> extractHeaders(HttpServletRequest httpRequest) {
         return Collections.list(httpRequest.getHeaderNames())
                 .stream()
                 .collect(Collectors.toMap(h -> h, httpRequest::getHeader));
